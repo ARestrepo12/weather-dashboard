@@ -26,7 +26,8 @@ var searchBtn = document.getElementById("search-btn");
 
 
  searchBtn.onclick = function() {
-     GetCity()
+     GetCity();
+     GetInfo()
   }
 
   function GetCity () {
@@ -35,3 +36,23 @@ var searchBtn = document.getElementById("search-btn");
       console.log(City);
   }
 
+// API KEY = 0daa911f9cdb0a0ae86937c70bc9de6a
+
+// api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}
+
+
+function GetInfo() {
+    const displayCityName = document.getElementById("displayCityName");
+    var inputCity = document.getElementById("userinput");
+    var City = inputCity.value;
+    displayCityName.innerHTML = City
+
+
+fetch("https://api.openweathermap.org/data/2.5/forecast?q='City'&appid=0daa911f9cdb0a0ae86937c70bc9de6a")
+.then(response => response.json())
+.then(data => {
+    for(i=0;i<5;i++){
+        document.getElementById("day" +(i+1)+"Temp").innerHTML ="Temp:" + Number(data.list[i].main.temp -288.53).toFixed(1)+"°";
+    }
+})
+}

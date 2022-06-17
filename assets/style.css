@@ -14,5 +14,19 @@
 }
 
 .row {
-    margin-right: 20px;
+    margin-right: 10px;
+}
+
+.forecast {
+    justify-content: space-between;
+}
+
+.card {
+    border: 2px solid black;
+    display: inline-block;
+    height: 250px;
+    width: 200px;
+    margin: 5px;
+    border-radius: 10px;
+    padding: 10px, 10px, 10px, 10px;
 }
