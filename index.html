@@ -5,10 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Weather Dashboard</title>
-    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/style.css"/>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <div class="header">
+    <h1>Weather Dashboard</h1>
+</div>
   </head>
   <body>
-      
+      <div class="row">
+      <div class="search col-3">
+      <h1>Search for a City:
+      </h1>
+      <input 
+      type="text"
+      id="cityInput"
+      placeholder="Enter City Name"
+      />
+      <button id="search-btn" class="search-btn">
+          Search
+      </button>
+    </div>
+
+    <div class="data col-9">
+        <div class="current-city">
+            <h1>Charlotte</h1>
+            <h3>Temp:
+                Wind:
+                Humidity:
+                UV Index:
+            </h3>
+        </div>
+    </div>
+
+    <div class= "5-day col-9">
+        <h1>5-Day Forecast:</h1>
+        <div class="card">
+            Date:
+            picture 
+            Temp:
+            Wind:
+            Humidity:
+        </div>
+    </div>
+</div>
   </body>
 
 </html>
