@@ -20,3 +20,18 @@ if (19 <= hours && hours < 5) {//Night
     var type = "Nighttime";
 }
    //CSS gradient backgrounds from https://uigradients.com
+
+
+var searchBtn = document.getElementById("search-btn");
+
+
+ searchBtn.onclick = function() {
+     GetCity()
+  }
+
+  function GetCity () {
+    var inputCity = document.getElementById("userinput");
+    var City = inputCity.value;
+      console.log(City);
+  }
+
