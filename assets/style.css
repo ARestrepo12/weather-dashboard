@@ -6,3 +6,13 @@
 .current-city {
     color: blue;
 }
+
+.data {
+    border: 2px solid black;
+    padding-right: 40px;
+ 
+}
+
+.row {
+    margin-right: 20px;
+}
