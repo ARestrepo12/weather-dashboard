@@ -48,11 +48,20 @@ function GetInfo() {
     displayCityName.innerHTML = City
 
 
-fetch("https://api.openweathermap.org/data/2.5/forecast?q='City'&appid=0daa911f9cdb0a0ae86937c70bc9de6a")
+fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${City}&appid=0daa911f9cdb0a0ae86937c70bc9de6a`)
 .then(response => response.json())
 .then(data => {
     for(i=0;i<5;i++){
-        document.getElementById("day" +(i+1)+"Temp").innerHTML ="Temp:" + Number(data.list[i].main.temp -288.53).toFixed(1)+"°";
+        document.getElementById("day" +(i+1)+"Temp").innerHTML ="Temp:" + Number((data.list[i].main.temp -273.15) *9/5 +32).toFixed(1)+"°";
+    }
+    for(i=0;i<5;i++){
+        document.getElementById("day" +(i+1)+"Wind").innerHTML ="Wind:" + Number(data.list[i].wind.speed / 1.609).toFixed(1)+"mph";
+    }
+    for(i=0;i<5;i++){
+        document.getElementById("day" +(i+1)+"Humidity").innerHTML ="Humidity:" + Number(data.list[i].main.humidity)+"%";
     }
 })
 }
+
+//celsius to fahrenheit formula
+//(0°C × 9/5) + 32 
