@@ -4,7 +4,14 @@
     color: white;
 }
 
+.search-btn {
+    background-image: linear-gradient(to right, rgb(211, 114, 211), rgb(84, 84, 219));
+    border-radius: 10px;
+}
 
+.search-btn:hover {
+    color: white;
+}
 
 .data {
     border: 2px solid black;
