@@ -14,7 +14,7 @@
     <h1>Weather Dashboard</h1>
 </div>
   </head>
-  <body>
+  <body onload="DefaultScreen()">
       <div class="row justify-content-end">
       <div class="search col-3">
       <h1>Search for a City:
@@ -32,10 +32,12 @@
     <div class="data col-9">
         <div class="current-city">
             <h1 id="displayCityName">Charlotte</h1>
-            <h3>Temp:
-                Wind:
-                Humidity:
-                UV Index:
+            <h3>
+            <p class="weather" id="day1">Day</p>
+            <div class="image"><img src="" class="imgClass" id="img1" alt=""></div>
+            <p class="Temp" id="day1Temp">Temp</p>
+            <p class="Wind" id="day1Wind">Wind</p>
+            <p class="Humidity" id="day1Humidity">Humidity</p>
             </h3>
         </div>
     </div>
@@ -43,13 +45,7 @@
     <div class= "day-5 col-9">
         <h1>5-Day Forecast:</h1>
         <div class="row forecast">
-        <div class="card">
-            <p class="weather" id="day1">Day</p>
-            <div class="image"><img src="" class="imgClass" id="img1" alt=""></div>
-            <p class="Temp" id="day1Temp">Temp</p>
-            <p class="Wind" id="day1Wind">Wind</p>
-            <p class="Humidity" id="day1Humidity">Humidity</p>
-        </div>
+        
         <div class="card">
             <p class="weather" id="day2">Day</p>
             <div class="image"><img src="" class="imgClass" id="img2" alt=""></div>
@@ -77,6 +73,13 @@
             <p class="Temp" id="day5Temp">Temp</p>
             <p class="Wind" id="day5Wind">Wind</p>
             <p class="Humidity" id="day5Humidity">Humidity</p>
+        </div>
+        <div class="card">
+            <p class="weather" id="day6">Day</p>
+            <div class="image"><img src="" class="imgClass" id="img6" alt=""></div>
+            <p class="Temp" id="day6Temp">Temp</p>
+            <p class="Wind" id="day6Wind">Wind</p>
+            <p class="Humidity" id="day6Humidity">Humidity</p>
         </div>
     </div>
     </div>

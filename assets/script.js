@@ -1,7 +1,7 @@
 
 
 // background colors
-var now = new Date();
+const now = new Date();
 var hours = now.getHours();
 if (5 <= hours && hours < 8) {//Morning
     document.write('<body style="background: #F3904F; background: -webkit-linear-gradient(to right, #3B4371, #F3904F); background: linear-gradient(to right, #3B4371, #F3904F);">');
@@ -21,7 +21,7 @@ if (19 <= hours && hours < 5) {//Night
 }
    //CSS gradient backgrounds from https://uigradients.com
 
-
+//button
 var searchBtn = document.getElementById("search-btn");
 
 
@@ -51,16 +51,42 @@ function GetInfo() {
 fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${City}&appid=0daa911f9cdb0a0ae86937c70bc9de6a`)
 .then(response => response.json())
 .then(data => {
-    for(i=0;i<5;i++){
-        document.getElementById("day" +(i+1)+"Temp").innerHTML ="Temp:" + Number((data.list[i].main.temp -273.15) *9/5 +32).toFixed(1)+"°";
+    for(i=0;i<6;i++){
+        document.getElementById("day" +(i+1)+"Temp").innerHTML ="Temp:" + Number((data.list[i].main.temp -273.15) *9/5 +32).toFixed(1)+"°F";
     }
-    for(i=0;i<5;i++){
-        document.getElementById("day" +(i+1)+"Wind").innerHTML ="Wind:" + Number(data.list[i].wind.speed / 1.609).toFixed(1)+"mph";
+    for(i=0;i<6;i++){
+        document.getElementById("day" +(i+1)+"Wind").innerHTML ="Wind:" + Number(data.list[i].wind.speed / 1.609).toFixed(1)+"MPH";
     }
-    for(i=0;i<5;i++){
+    for(i=0;i<6;i++){
         document.getElementById("day" +(i+1)+"Humidity").innerHTML ="Humidity:" + Number(data.list[i].main.humidity)+"%";
     }
+    for(i=0;i<6;i++){
+        document.getElementById("img" + (i+1)).src = "http://openweathermap.org/img/wn/" + data.list[i].weather[0].icon+".png";
+    }
 })
+.catch(err => alert("something went wrong"))
+}
+
+
+function DefaultScreen(){
+    document.getElementById("userinput").defaultValue ="Charlotte";
+    GetInfo();
+}
+
+//display correct days of 5 day forecast
+const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+function CheckDay(day) {
+    if(day +now.getDay() > 6){
+        return day +now.getDay()-7;
+    }
+    else{
+        return day +now.getDay();
+    }
+}
+
+for(i=0;i<6;i++){
+    document.getElementById("day"+(i+1)).innerHTML = weekday[CheckDay(i)];
 }
 
 //celsius to fahrenheit formula

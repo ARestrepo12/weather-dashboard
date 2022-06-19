@@ -1,11 +1,10 @@
 .header {
-    background-color: blue;
+    background-image: linear-gradient(to right, rgb(129, 16, 129), rgb(33, 33, 165));
     text-align: center;
+    color: white;
 }
 
-.current-city {
-    color: blue;
-}
+
 
 .data {
     border: 2px solid black;
@@ -13,20 +12,18 @@
  
 }
 
-.row {
-    margin-right: 10px;
-}
-
 .forecast {
     justify-content: space-between;
 }
 
 .card {
-    border: 2px solid black;
+    border: 2px solid black !important;
     display: inline-block;
     height: 250px;
     width: 200px;
     margin: 5px;
-    border-radius: 10px;
+    border-radius: 10px !important;
     padding: 10px, 10px, 10px, 10px;
+    background-color: slategrey !important;
 }
+
